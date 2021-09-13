@@ -11,7 +11,6 @@
 
 
     <div class="lista col-sm-12 col-lg-12">
-
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -25,16 +24,23 @@
     $("#btn-adicionar").on("click", function () {
         debugger
         var input = $("#campo-texto");
-
-        var listaTemplate = `<div class="row">
+        var texto = input.val();
+        var listaTemplate = `<div class="row" identificador="##identificador##">
             <div class="col-12">
-                <span> OK! </span> <span> '${input.val()}'</span>
+                <span> OK! </span> <span> ##texto##</span>  <button class="btn btn-danger"  identificador="##identificador##">remover</button>
             </div>
         </div>`;
 
-        var objItens = {};
 
-        $(".lista").prepend(listaTemplate);
+
+        var objItens = {
+            Texto: texto,
+            Id = itens.length
+        };
+
+        itens.push(objItens);
+
+        $(".lista").prepend(listaTemplate.replaceAll("##identificador##", itens.length).replace("##texto##", texto));
 
 
     });
