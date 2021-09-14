@@ -1,7 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    body {
+        font-size: 20px
+    }
 
+    .row:hover {
+        background-color: darkgrey
+    }
+</style>
 <div class="conteudo">
 
     <div class="campo input-group col-12">
@@ -13,7 +21,6 @@
     <div class="lista col-sm-12 col-lg-12">
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
 
@@ -22,12 +29,11 @@
 
     $("#btn-adicionar").off("click");
     $("#btn-adicionar").on("click", function () {
-        debugger
         var input = $("#campo-texto");
         var texto = input.val();
         var listaTemplate = `<div class="row" identificador="##identificador##">
             <div class="col-12">
-                <span> OK! </span> <span> ##texto##</span>  <button class="btn btn-danger"  identificador="##identificador##">remover</button>
+                <span clas=""> OK! </span> <span> ##texto##</span>  <button class="btn btn-danger remover float-right"  identificador="##identificador##">X</button>
             </div>
         </div>`;
 
@@ -35,7 +41,7 @@
 
         var objItens = {
             Texto: texto,
-            Id = itens.length
+            Id: itens.length
         };
 
         itens.push(objItens);
@@ -43,6 +49,12 @@
         $(".lista").prepend(listaTemplate.replaceAll("##identificador##", itens.length).replace("##texto##", texto));
 
 
+        $(".remover").off("click");
+        $(".remover").on("click", function () {
+             
+            $(`.row[identificador=${$(this).attr("identificador")}]`).remove();
+
+        });
     });
 
 
