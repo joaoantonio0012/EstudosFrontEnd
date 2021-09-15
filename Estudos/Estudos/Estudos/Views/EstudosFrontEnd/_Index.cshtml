@@ -9,6 +9,10 @@
     .row:hover {
         background-color: darkgrey
     }
+
+    .concluido{
+        background-color :grey
+    }
 </style>
 <div class="conteudo">
 
@@ -31,14 +35,13 @@
     $("#btn-adicionar").on("click", function () {
         var input = $("#campo-texto");
         var texto = input.val();
-        var listaTemplate = `<div class="row" identificador="##identificador##">
-            <div class="col-12">
-                <span clas=""> OK! </span> <span> ##texto##</span>  <button class="btn btn-danger remover float-right"  identificador="##identificador##">X</button>
+        var listaTemplate = `<div class="row mt-2" identificador="##identificador##">
+            <div class="col-12  ">
+                <span class=""> OK! </span> <span> ##texto##</span> 
+                <button class="btn btn-danger remover float-right"  identificador="##identificador##">X</button>
             </div>
         </div>`;
-
-
-
+         
         var objItens = {
             Texto: texto,
             Id: itens.length
@@ -50,18 +53,31 @@
 
 
         $(".remover").off("click");
-        $(".remover").on("click", function () { 
+        $(".remover").on("click", function () {
              
-            $(`.row[identificador=${$(this).attr("identificador")}]`).remove();
+            var identificador  = $(this).attr("identificador");
 
+            $(`.row[identificador=${identificador}]`).remove();
+            removerArray(identificador, itens,"Id")
+        });
+        $(".row").off("click");
+        $(".row").on("click", function () { 
+            $(this).toggleClass("concluido");  
         });
     });
 
+    function removerArray(identificador, itens,key) {
 
-    //var objItens =
+        if (identificador == undefined)
+            return;
 
+        for (var i in itens) {
+            if (itens[i][key] == identificador) {
+                itens.splice(i, 1);
+            }
+        }
 
-
-
+    }
+     
 </script>
 
