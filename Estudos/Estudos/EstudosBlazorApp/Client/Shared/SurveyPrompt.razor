@@ -4,7 +4,7 @@
 
     <span class="text-nowrap">
         Please take our
-        <a target="_blank" class="font-weight-bold" href="https://go.microsoft.com/fwlink/?linkid=2137916">brief survey</a>
+        <a target="_blank" style="color:@Color" class="font-weight-bold" href="https://go.microsoft.com/fwlink/?linkid=2137916">brief survey</a>
     </span>
     and tell us what you think.
 </div>
@@ -13,4 +13,6 @@
     // Demonstrates how a parent component can supply parameters
     [Parameter]
     public string Title { get; set; }
+    [Parameter]
+    public string Color { get; set; }
 }
