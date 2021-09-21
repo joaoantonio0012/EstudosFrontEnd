@@ -3,40 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppLogin.Views.Dashboard">
     <ContentPage.Content>
-        <Grid>
-            <Frame    BackgroundColor="White"   HasShadow="True" Padding="0" Margin="0">
+        <FlexLayout
+                BackgroundColor="{StaticResource LokkeLaranja}"
+                Direction="Column">
+            <Grid
+                HeightRequest="{OnPlatform Android=120 ,iOS=150 }"
+            >
+                <Frame    BackgroundColor="White"   HasShadow="True" Padding="0" Margin="0">
+                    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Margin="0" >
 
-
-                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Margin="0" >
-
-                    <Frame  HeightRequest="130" BackgroundColor="#4b0096">
-                        <StackLayout>
-                            <StackLayout >
-                                <Label Text="Bem vindo " FontSize="Medium" FontAttributes="Bold" />
-                                <Button Text="Ajuda"
-                                        Clicked="BtAjudaClick"
-                                        TextColor="White"
-                                        BackgroundColor="Transparent"
-                                        BorderColor="White"
-                                        BorderWidth="3"
-                                        CornerRadius="50"
-                                        WidthRequest="150"
-                                        HeightRequest="50" />                   
-                            </StackLayout>
-               
+                        <Frame  HeightRequest="130" BackgroundColor="White">
                             <StackLayout>
-                                 <Label Text="{Binding Nome}" FontSize="Medium" FontAttributes="Bold" />
-                            </StackLayout>
+                                <StackLayout >
+                                    <Label Text="Bem vindo " FontSize="Medium" FontAttributes="Bold" />
+                                    <ImageButton   />
+                                </StackLayout>
 
-                            <StackLayout>
-                                <Label Text="{Binding Email1}" FontSize="Small" FontAttributes="Bold" />
-                            </StackLayout>
+                                <StackLayout>
+                                    <Label Text="{Binding Nome}" FontSize="Medium" FontAttributes="Bold" />
+                                </StackLayout>
 
-                        </StackLayout>
-                    </Frame>
+                                <StackLayout>
+                                    <Label Text="{Binding Email1}" FontSize="Small" FontAttributes="Bold" />
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Frame>
+
+                    </StackLayout>
+                </Frame>
+                
+                
+                <ImageButton Style="{StaticResource RoundedLightButton}"
+                      Source="ajuda.png"
+                             HorizontalOptions="End"
+                             VerticalOptions="Start"
+                             Margin="0,20,20,0"
+                             Clicked="BtAjudaClick"
+                             BackgroundColor="{StaticResource LokkeLaranja}"
+                 />
+
+                
+            </Grid>
             
-                </StackLayout>
-            </Frame>
-        </Grid>
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

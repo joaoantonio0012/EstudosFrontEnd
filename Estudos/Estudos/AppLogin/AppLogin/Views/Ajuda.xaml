@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppLogin.Views.Ajuda"
+             Shell.PresentationMode="Modal">
+    <ContentPage.Content>
+        <FlexLayout
+            BackgroundColor="White"   
+            Direction="Column">
+            <Grid
+                HeightRequest="{OnPlatform Android=600 ,iOS=500 }"
+            >
+                
+                <ImageButton Style="{StaticResource RoundedLightButton}"
+                      Source="ajuda.png"
+                             HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="EndAndExpand"
+                             Margin="0,20,20,0"
+                             Aspect="AspectFill"
+                             Clicked="btnNovoTicket"
+                 />
+
+
+            </Grid>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

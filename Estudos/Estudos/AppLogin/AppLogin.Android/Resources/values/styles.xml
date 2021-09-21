@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
-  <style name="MainTheme" parent="MainTheme.Base">
-   
+  <style name="Theme.splash" parent="android:Theme">
+    <item name ="android:windowBackground"> @drawable/LogoAnimadoRoxo </item>
+    <item name ="android:windowNoTitle">true </item>
+
+  </style>
+
+  <style name="MainTheme" parent="MainTheme.Base"> 
     <!-- As of Xamarin.Forms 4.6 the theme has moved into the Forms binary -->
     <!-- If you want to override anything you can do that here. -->
     <!-- Underneath are a couple of entries to get you started. -->
@@ -10,6 +15,7 @@
     <!-- Set theme colors from https://aka.ms/material-colors -->
     <!-- colorPrimary is used for the default action bar background -->
     <item name="colorPrimary">@color/colorLokkeRoxo</item>
+   
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">@color/colorLokkeRoxo</item>
     <!-- colorAccent is used as the default value for colorControlActivated

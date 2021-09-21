@@ -10,18 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace AppLogin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Dashboard : ContentPage
+    public partial class SplashScreen : ContentPage
     {
-        public Dashboard()
+        public SplashScreen()
         {
             InitializeComponent();
-
-        }
-        
-        private void BtAjudaClick(object sender, EventArgs e)
-        {
-            var ajuda = new Ajuda();
-            Navigation.PushModalAsync(ajuda);
         }
     }
 }

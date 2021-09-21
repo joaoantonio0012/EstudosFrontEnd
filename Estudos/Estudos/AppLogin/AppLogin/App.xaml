@@ -4,5 +4,19 @@
              x:Class="AppLogin.App">
     <Application.Resources>
 
+        <Color x:Key="LokkeRoxo">#4b0096</Color>
+        <Color x:Key="LokkeLaranja">#ff8601</Color>
+        
+        <Style x:Key="RoundedLightButton" TargetType="ImageButton">
+            <Setter Property="BorderColor" Value="#d5d5d5"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="CornerRadius" Value="30"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="WidthRequest" Value="60"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="20,0"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

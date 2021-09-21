@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppLogin.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,18 @@ using Xamarin.Forms.Xaml;
 namespace AppLogin.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Dashboard : ContentPage
+    public partial class Ajuda : ContentPage
     {
-        public Dashboard()
+        public Ajuda()
         {
             InitializeComponent();
-
         }
-        
-        private void BtAjudaClick(object sender, EventArgs e)
+
+        private void btnNovoTicket(object sender, EventArgs e)
         {
-            var ajuda = new Ajuda();
-            Navigation.PushModalAsync(ajuda);
+            var TelaNovoTickt = new NovoTicket(); 
+            Navigation.PushModalAsync(TelaNovoTickt);
+
         }
     }
 }
